@@ -1,0 +1,58 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.taydo.hichat"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<ion-view title="Home" hide-nav-bar="true">
+<link href="css/home.css" rel="stylesheet">
+<style ng-if="notification.messagesNew">
+	ion-tabs .ion-chatbubble-working:after{content:'{{notification.messagesNew}}'}
+</style>
+<ion-tabs class="tabs-positive tabs-icon tabs-color-active-light tabs-top-full" delegate-handle="tab-home">
+<ion-tab icon="ion-chatbubble-working status-notification">
+<ion-pane ng-controller="messagesCtrl" ng-class="{'select-messages':0<choseMessagesCount}">
+	<ion-header-bar align-title="left" class="bar-stable" ng-hide="choseMessagesCount<1">
+	  <div class="buttons">
+		<button class="button button-icon ion-android-arrow-back" ng-click="cancelChoseMessages()"></button>
+	  </div>
+	  <h1 class="title title-chose-messages">{{choseMessagesCount}} messages</h1>
+	  <div class="buttons">
+		<button class="button button-icon ion-ios-trash-outline" ng-click="deleteMessages()"></button>
+	  </div>
+	</ion-header-bar>
+	<ion-content class="chose-messages" ng-class="{'has-footer':choseMessagesCount<1}">
+		<div ng-include="'templates/messages/index.html'"></div>
+	</ion-content>
+	<ion-footer-bar align-title="left" class="bar-light" ng-show="choseMessagesCount<1">
+	  <button class="button button-icon ion-ios-search-strong" ui-sref="search"></button>
+	  <button class="button button-icon icon-chatbubble" ui-sref="createGroup"></button>
+	</ion-footer-bar>
+</ion-pane>
+</ion-tab>
+<ion-tab icon="ion-person"><ion-pane ng-controller="contactsCtrl">
+	<ion-content><div ng-include="'templates/contacts/index.html'"></div></ion-content>
+	<ion-footer-bar align-title="left" class="bar-light">
+	  <button class="button button-icon ion-ios-search-strong" ui-sref="search"></button>
+	  <button class="button button-icon icon-add-person" ui-sref="addContacts"></button>
+	</ion-footer-bar>
+</ion-pane></ion-tab>
+<ion-tab icon="ion-ios-people"><ion-pane ng-controller="groupCtrl">
+	<ion-content><div ng-include="'templates/group/index.html'"></div></ion-content>
+</ion-pane></ion-tab>
+<ion-tab icon="ion-android-more-horizontal"><ion-pane ng-controller="settingsCtrl">
+	<ion-content><div ng-include="'templates/settings/index.html'"></div></ion-content>
+</ion-pane></ion-tab>
+</ion-tabs>
+</ion-view>

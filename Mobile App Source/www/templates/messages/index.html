@@ -1,0 +1,21 @@
+<link href="css/messages.css" rel="stylesheet">
+<div class="list message-index">
+	<div ng-repeat="message in messages | orderBy:'-time'" class="item item-avatar relative">
+	<input type="checkbox" id="message_{{message.$id}}" ng-change="choseMessage(message)" ng-model="message.selected">
+	<label for="message_{{message.$id}}">
+	  <img ng-if="message.avatar.$value" ng-src="{{message.avatar.$value}}">
+	  <img ng-if="!message.avatar.$value" ng-src="css/img/avatar/{{message.name.$value | firstChar}}.png">
+	  <div class="status-check bg-full"></div>
+	  <div ng-show="message.unread > 0" class="message-count">{{message.unread}}</div>
+	</label>
+	<div ui-sref="detail({id:message.$id})">
+	  <h2>{{message.name.$value}}</h2>
+	  <p>{{message.content}}</p>
+	  <p class="message-time">{{message.time | sinceTime}}</p>
+	</div>
+	</div>
+</div>
+<div ng-show="messages == ''" class="text-center">
+	<div class="margin-bottom">Send messages to friend free</div>
+	<button class="button button-small width-20 button-positive" ui-sref="createGroup">Start</button>
+</div>
